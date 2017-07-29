@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 读书笔记----head first javascript 第一章
+title: 读书笔记：head first javascript 第一章
 category: javascript
 tags: [javascript]
 description: None
