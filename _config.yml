@@ -1,0 +1,49 @@
+encoding: UTF-8
+
+permalink: /:year-:month-:day/:title.html
+###为了使用jekyll, 去掉paginate配置
+# paginate: 5
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+###为了使用jekyll, 使用rouge替代pygments, 作为语法高亮的方案
+# highlighter: pygments
+# pygments: true
+highlighter: rouge
+
+# 作者信息
+author: 
+  name: icellus
+  email: 2283411628@qq.com
+  link: http://icellus.github.io/
+  github: https://github.com/icellus
+  github_username: icellus 
+
+# 站点信息
+title : icellus
+#description: 
+url: http://icellus.github.io/
+rss_url: /feed.xml
+
+# gavatar头像及Favicon
+gavatar : /assets/img/gavatar.png
+favicon : /assets/img/favicon.png
+
+# disqus 设置
+#disqus:
+#shortname: mumingv
+
+#profile 个人信息
+profile_desc : To do more.<br>To see more.
+
+# 首页除了最新文章外显示分类
+cates: 
+- Essay
+- Php
+- Javascript
+
+# 中文本地化
+locals: 
+   newest : 最新文章

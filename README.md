@@ -1,2 +1,1 @@
-# icellus.github.io
-my blog
+Blog
