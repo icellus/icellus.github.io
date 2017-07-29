@@ -1,9 +1,9 @@
 ---
-layout:post
-title:读书笔记----head first javascript 第一章
-category:javascript
-tags:[javascript]
-description:None
+layout: post
+title: 读书笔记----head first javascript 第一章
+category: javascript
+tags: [javascript]
+description: None
 ---
 
 一直想尽量学习一下javascript，至今才开始正式读一本javascript的书。
