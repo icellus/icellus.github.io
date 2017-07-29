@@ -10,7 +10,7 @@ description:None
 
 **head first javascript**
 
-![](/assets/img/blog/head_first_javascript.jpg)
+![](/assets/img/blog/head_first_javascript.gif)
 
 不得不说，读一本英文书对我来说还是略吃力的。时间方面也是非常的紧张。
 
