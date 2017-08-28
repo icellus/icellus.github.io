@@ -35,7 +35,7 @@ var guess;
 guess = prompt("enter a number 0-6");
 ````
 
-这里有一个有意思的地方就是guess 的值：
+这里有一个有意思的地方就是`guess` 的值：
 
 + 当用户未输入任何数据的时候，`guess` 会得到 **undefined** 
 + 当用户输入一个任意数字的时候,`guess`则是会得到一个 **string** （字符串，并非是int）
