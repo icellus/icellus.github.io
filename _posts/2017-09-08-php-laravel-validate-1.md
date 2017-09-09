@@ -2,7 +2,7 @@
 layout: post
 title: laravel 之验证器(1)
 category: php
-tags: [php] [laravel]
+tags: [php]
 description: None
 ---
 
