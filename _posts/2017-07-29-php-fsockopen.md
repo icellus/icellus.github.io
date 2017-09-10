@@ -6,7 +6,7 @@ tags: [PHP]
 description: None
 ---
 
-实际业务中，经常会遇到一个场景：一个很繁琐的操作中需要加入一个耗时长，可以不需要立即获得结果（或者并不适合很重要）的业务逻辑。
+实际业务中，经常会遇到一个场景：一个很繁琐的操作中需要加入一个耗时长，可以不需要立即获得结果（或者结果并不是很重要）的业务逻辑。
 
 这个时候，可以考虑用异步进程来实现。
 
@@ -51,36 +51,3 @@ public function triggerAsyncTask($host,$port, $targetUrl)
 这种方法或者其他实现的优劣，暂时也不是很明白。
 
 guzzle可是能是一个不错的选择。
-
-
-
-
-
-
-
-
-# !/bin/sh
-
-git filter-branch --env-filter '
-
-an="$GIT_AUTHOR_NAME"
-am="$GIT_AUTHOR_EMAIL"
-cn="$GIT_COMMITTER_NAME"
-cm="$GIT_COMMITTER_EMAIL"
-
-if [ "$GIT_COMMITTER_EMAIL" = "icellus@2283411628.com" ]
-then
-    cn="icellus"
-    cm="2283411628@qq.com"
-fi
-if [ "$GIT_AUTHOR_EMAIL" = "icellus@2283411628.com" ]
-then
-    an="icellus"
-    am="2283411628@qq.com"
-fi
-
-export GIT_AUTHOR_NAME="$an"
-export GIT_AUTHOR_EMAIL="$am"
-export GIT_COMMITTER_NAME="$cn"
-export GIT_COMMITTER_EMAIL="$cm"
-'
