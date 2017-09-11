@@ -67,7 +67,7 @@ laravel 作为公认的优雅的php框架，`validator` 让参数验证不再痛
 
 2. 手动创建验证器
 
-    ​   使用 `Controller` 的方法，固然轻松简洁。但是又时候可能会不能完全满足我们的业务需求。毕竟 `validatesRequests`只实现了简单的验证。
+    ​   使用 `Controller` 的方法，固然轻松简洁。但是有时候可能会不能完全满足我们的业务需求。毕竟 `validatesRequests`只实现了简单的验证。
 
     这个时候，我们可以通过以下的方式来手动创建验证器。
 
@@ -108,13 +108,10 @@ laravel 作为公认的优雅的php框架，`validator` 让参数验证不再痛
     php artisan make:request MyFormRequest
     ````
 
-    ​   是的，直接使用 `artisan` 命令创建一个新的验证类，完全分离验证逻辑和代码。这个时候必须要提的一点是，该`Request`和请求对象`Illuminate\Http\Request`是不同的。两者都是继承于`SymfonyRequest`，但各自的实现是完全不同的。
-
-    ​   `Illuminate\Http\Request`的任务和作用更多是封装了关于本次请求的属性和方法。
-
-    而我们创建的只是表单请求类，创建的验证类文件位于`app\Http\Request`,并继承于`app\Http\Request\Request`(抽象类)，
-
-    我们再从抽象类`Request`的父类分析，其继承于`Illuminate\Foundation\Http\FormRequest`,主要的方法和实现都在`FormRequest`中实现：
+    ​   是的，直接使用 `artisan` 命令创建一个新的验证类，完全分离验证逻辑和代码。
+       创建的验证类文件位于`app\Http\Request`,并继承于`app\Http\Request\Request`(抽象类)，
+       我们再从抽象类`Request`的父类分析，其继承于`Illuminate\Foundation\Http\FormRequest`,主要的方法都在`FormRequest`中实现。
+       而`FormRequest`继承于我们平时使用的请求对象`Illuminate\Http\Request`。所以表单验证类是可以完全调用请求对应`Illuminate\Http\Request`的方法的。
 
     ````php
     class FormRequest extends Request implements ValidatesWhenResolved
@@ -152,6 +149,16 @@ laravel 作为公认的优雅的php框架，`validator` 让参数验证不再痛
        return [
            'name' => 'required|string'
        ];
+    }
+
+    // 表单验证类的钩子(laravel 5.5支持)
+    public function withValidator($validator)
+    {
+        $validator->after(function ($validator) {
+            if ($this->somethingElseIsInvalid()) {
+                $validator->errors()->add('field', 'Something is wrong!');
+            }
+        });
     }
     ````
 
