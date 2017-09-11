@@ -106,10 +106,12 @@ laravel 作为公认的优雅的php框架，`validator` 让参数验证不再痛
 
     ````php
     php artisan make:request MyFormRequest
+
     ````
 
-    ​   是的，直接使用 `artisan` 命令创建一个新的验证类，完全分离验证逻辑和代码。创建的验证类文件位于`app\Http\Request`,并继承于`app\Http\Request\Request`(抽象类)，
 
+    ​   是的，直接使用 `artisan` 命令创建一个新的验证类，完全分离验证逻辑和代码。创建的验证类文件位于`app\Http\Request`,并继承于`app\Http\Request\Request`(抽象类)，
+    
        我们再从抽象类`Request`的父类分析，其继承于`Illuminate\Foundation\Http\FormRequest`,主要的方法都在`FormRequest`中实现。
 
        而`FormRequest`继承于我们平时使用的请求对象`Illuminate\Http\Request`。所以表单验证类是可以完全调用请求对象`Illuminate\Http\Request`的方法的。
